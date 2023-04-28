@@ -7,12 +7,7 @@ class Solution {
         
         for (int i=0; i<clothes.length; i++) {
             String key = clothes[i][1];
-            if (map.containsKey(key)) {
-                int cnt = map.remove(key);
-                map.put(key, cnt+1);
-            } else {
-                map.put(key, 1);
-            }
+            map.put(key, map.getOrDefault(key, 0)+1);
         }
         
         for (String key : map.keySet()) {
