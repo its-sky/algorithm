@@ -14,8 +14,8 @@ class Solution {
         }
         
         while (!stack.isEmpty()) {
-            answer[stack.peek()] = prices.length - stack.peek() - 1;
-            stack.pop();
+            int idx = stack.pop();
+            answer[idx] = prices.length - idx - 1;
         }
         
         return answer;
