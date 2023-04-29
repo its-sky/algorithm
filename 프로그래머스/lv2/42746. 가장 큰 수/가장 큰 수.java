@@ -14,12 +14,12 @@ class Solution {
             return "0";
         }
         
-        StringBuilder answer = new StringBuilder();
+//         StringBuilder answer = new StringBuilder();
         
-        for (int i = 0; i < arr.length; i++) {
-            answer.append(arr[i]);
-        }
+//         for (int i = 0; i < arr.length; i++) {
+//             answer.append(arr[i]);
+//         }
         
-        return answer.toString();
+        return String.join("", arr);
     }
 }
