@@ -1,14 +1,5 @@
 class Solution {
     
-    private static boolean isPerfect(int num) {
-        while (num > 0) {
-            if (num % 10 != 0)
-                return false;
-            num = num / 10;
-        }
-        return true;
-    }
-    
     public int solution(int storey) {
         int answer = 0;
         
