@@ -1,0 +1,22 @@
+-- 코드를 입력하세요
+# SET @HOUR = -1;
+# SELECT (@HOUR := @HOUR +1) AS HOUR,
+#         (SELECT COUNT(HOUR(DATETIME))
+#         FROM ANIMAL_OUTS
+#         WHERE HOUR(DATETIME)=@HOUR) AS 'COUNT'
+# FROM ANIMAL_OUTS
+# WHERE @HOUR < 23;
+
+WITH RECURSIVE cte(n) AS
+(
+    SELECT 0
+    
+    UNION ALL
+    
+    SELECT n + 1 FROM cte WHERE n < 23
+)
+
+select n HOUR, COUNT(ANIMAL_ID)
+FROM cte LEFT JOIN ANIMAL_OUTS O ON n = HOUR(O.DATETIME)
+GROUP BY n
+ORDER BY n;
